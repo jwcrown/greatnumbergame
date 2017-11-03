@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="text-align: center; margin:auto;">
+    <h1>Welcome To The Great Number Game!</h1>
+            <h4>I am thinking of a number between 1 and 100</h4>
+            <h4>Take a guess!</h4>
+   
+    {% if result == "winner" %} 
+    <div style="width: 300px; margin:auto; height: 100px; background-color: green; padding: 30px;">
+        <h2>Great Job!! You guessed the number!</h2>
+        <form action="/reset" method="post">
+            <input type="submit" value="Play Again?">
+        </form>
+    </div>
+    {% else %}
+    <div style="width: 300px; margin:auto; height: 100px; background-color: red; padding: 30px;">
+        <form action="/" method="post">
+            <input type="number" name="guess">
+            <input type="submit" value="Submit">
+        </form>
+        {{result}}
+    {% endif %}
+    </div>
+</body>
+</html>
